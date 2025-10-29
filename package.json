@@ -1,0 +1,32 @@
+{
+  "name": "hotels-server",
+  "version": "1.0.0",
+  "description": "Express server for hotels with Ratehawk and TBO integration",
+  "main": "hotels-server.js",
+  "scripts": {
+    "start": "node hotels-server.js",
+    "dev": "nodemon hotels-server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.450.0",
+    "@aws-sdk/lib-dynamodb": "^3.450.0",
+    "axios": "^1.12.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "keywords": [
+    "hotels",
+    "ratehawk",
+    "tbo",
+    "dynamodb",
+    "express"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
