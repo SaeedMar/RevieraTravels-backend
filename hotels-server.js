@@ -21,7 +21,7 @@ const port = process.env.PORT || 5000;
 
 // Middleware
 const allowedOrigins = [
-  'https://reviera-booking-app.vercel.app',
+  'https://reviera-travels.vercel.app',
   'http://localhost:3000', // Local development
   'http://localhost:3001', // Alternative local port
 ];
