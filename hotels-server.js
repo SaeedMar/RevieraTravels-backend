@@ -18,6 +18,25 @@ const flightsRoutes = require("./routes/flights.js");
 
 dotenv.config();
 
+// Optional Firebase Admin (for Firestore persistence)
+let admin = null;
+try {
+  // Lazy require so server can run even if not installed
+  // eslint-disable-next-line
+  admin = require('firebase-admin');
+  if (!admin.apps.length) {
+    const sa = process.env.FIREBASE_SERVICE_ACCOUNT ? JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT) : null;
+    if (sa) {
+      admin.initializeApp({ credential: admin.credential.cert(sa) });
+      console.log('[Firebase] Initialized with service account');
+    } else {
+      console.log('[Firebase] Service account not provided; skipping Firestore init');
+    }
+  }
+} catch (e) {
+  console.log('[Firebase] Admin SDK not installed or failed to init:', e?.message);
+}
+
 const app = express();
 const port = process.env.PORT || 5000;
 
@@ -703,6 +722,16 @@ function writeBookingsFile(bookings) {
   }
 }
 
+async function writeBookingToFirestore(record) {
+  try {
+    if (!admin || !admin.apps || !admin.apps.length) return;
+    const db = admin.firestore();
+    await db.collection('bookings').doc(String(record.id)).set(record, { merge: true });
+  } catch (e) {
+    console.warn('[Firebase] Write failed:', e?.message);
+  }
+}
+
 function formatAirport(value) {
   if (!value) return '';
   if (typeof value === 'string') return value;
@@ -736,6 +765,9 @@ function normalizeBooking(record) {
   const firstSlice = slices[0] || {};
   const lastSlice = slices[slices.length - 1] || {};
   const firstSeg = Array.isArray(firstSlice.segments) ? firstSlice.segments[0] : null;
+  const passengerCount = Array.isArray(booking.passengers)
+    ? booking.passengers.length
+    : (Array.isArray(offer.passengers) ? offer.passengers.length : (booking.passengerCount || 0));
 
   const totalAmount = parseAmount(
     booking.totalAmount,
@@ -763,6 +795,7 @@ function normalizeBooking(record) {
   if (!booking.origin && origin) { booking.origin = origin; changed = true; }
   if (!booking.destination && destination) { booking.destination = destination; changed = true; }
   if (!booking.departureDate && departureDate) { booking.departureDate = departureDate; changed = true; }
+  if (!booking.passengerCount && passengerCount) { booking.passengerCount = passengerCount; changed = true; }
   if (changed) booking.updatedAt = new Date().toISOString();
   return { booking, changed };
 }
@@ -813,6 +846,8 @@ app.post("/bookings", (req, res) => {
     if (!writeBookingsFile(items)) {
       return res.status(500).json({ ok: false, error: "Persist failed" });
     }
+    // Also persist to Firestore when configured
+    writeBookingToFirestore(record);
     res.json({ ok: true, id, data: record });
   } catch (e) {
     res.status(500).json({ ok: false, error: e?.message });
@@ -827,6 +862,8 @@ app.post("/bookings/normalize", (req, res) => {
     const normalized = items.map((r) => {
       const { booking, changed } = normalizeBooking(r);
       if (changed) anyChanged = true;
+      // mirror to Firestore as well
+      writeBookingToFirestore(booking);
       return booking;
     });
     if (anyChanged) writeBookingsFile(normalized);
