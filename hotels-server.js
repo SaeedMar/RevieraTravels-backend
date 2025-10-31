@@ -1,4 +1,6 @@
 const express = require("express");
+const fs = require("fs");
+const path = require("path");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const { DynamoDBClient } = require("@aws-sdk/client-dynamodb");
@@ -674,6 +676,72 @@ app.post("/search/hotels", async (req, res) => {
 
 // Flights routes
 app.use("/flights", flightsRoutes);
+
+// ==================== BOOKINGS (PERSISTED JSON) ====================
+
+const BOOKINGS_FILE = path.join(__dirname, "bookings.json");
+
+function readBookingsFile() {
+  try {
+    if (fs.existsSync(BOOKINGS_FILE)) {
+      const raw = fs.readFileSync(BOOKINGS_FILE, "utf8");
+      return JSON.parse(raw || "[]");
+    }
+  } catch (e) {
+    console.warn("[Bookings] Read failed:", e?.message);
+  }
+  return [];
+}
+
+function writeBookingsFile(bookings) {
+  try {
+    fs.writeFileSync(BOOKINGS_FILE, JSON.stringify(bookings, null, 2), "utf8");
+    return true;
+  } catch (e) {
+    console.warn("[Bookings] Write failed:", e?.message);
+    return false;
+  }
+}
+
+// List bookings
+app.get("/bookings", (req, res) => {
+  try {
+    const items = readBookingsFile();
+    // optional: filter by user/email in future
+    res.json(items);
+  } catch (e) {
+    res.status(500).json({ error: "Failed to read bookings", details: e?.message });
+  }
+});
+
+// Create booking
+app.post("/bookings", (req, res) => {
+  try {
+    const payload = req.body || {};
+    const items = readBookingsFile();
+    const id = `bk_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
+    const nowIso = new Date().toISOString();
+    const record = {
+      id,
+      createdAt: nowIso,
+      updatedAt: nowIso,
+      status: payload.status || "paid",
+      type: payload.type || "flight",
+      stripe_session_id: payload.stripe_session_id || null,
+      duffel: payload.duffel || null,
+      offer: payload.offer || null,
+      passengers: Array.isArray(payload.passengers) ? payload.passengers : [],
+      options: payload.options || {},
+    };
+    items.unshift(record);
+    if (!writeBookingsFile(items)) {
+      return res.status(500).json({ ok: false, error: "Persist failed" });
+    }
+    res.json({ ok: true, id, data: record });
+  } catch (e) {
+    res.status(500).json({ ok: false, error: e?.message });
+  }
+});
 
 // ==================== HEALTH CHECK ====================
 
