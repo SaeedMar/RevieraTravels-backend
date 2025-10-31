@@ -836,6 +836,24 @@ app.post("/bookings/normalize", (req, res) => {
   }
 });
 
+// Get a single booking by id
+app.get("/bookings/:id", (req, res) => {
+  try {
+    const id = req.params.id;
+    const items = readBookingsFile();
+    const found = items.find((b) => String(b.id) === String(id) || String(b._id) === String(id));
+    if (!found) return res.status(404).json({ ok: false, error: "Not found" });
+    const { booking, changed } = normalizeBooking(found);
+    if (changed) {
+      const others = items.map((b) => (String(b.id) === String(id) || String(b._id) === String(id) ? booking : b));
+      writeBookingsFile(others);
+    }
+    res.json({ ok: true, data: booking });
+  } catch (e) {
+    res.status(500).json({ ok: false, error: e?.message });
+  }
+});
+
 // ==================== HEALTH CHECK ====================
 
 app.get("/health", (req, res) => {
