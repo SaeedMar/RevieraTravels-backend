@@ -703,12 +703,82 @@ function writeBookingsFile(bookings) {
   }
 }
 
+function formatAirport(value) {
+  if (!value) return '';
+  if (typeof value === 'string') return value;
+  return (
+    value.iata_code ||
+    value.iataCode ||
+    value.name ||
+    value.city_name ||
+    ''
+  );
+}
+
+function parseAmount(...candidates) {
+  for (const v of candidates) {
+    if (v !== undefined && v !== null && String(v).trim() !== '') {
+      const n = Number(String(v).replace(/[^0-9.]/g, ''));
+      if (!Number.isNaN(n)) return n;
+    }
+  }
+  return 0;
+}
+
+function normalizeBooking(record) {
+  const booking = { ...record };
+  const offer = booking.offer || booking?.duffel?.offer || booking?.duffel?.order || {};
+  const slices = Array.isArray(offer.slices)
+    ? offer.slices
+    : Array.isArray(offer?.data?.slices)
+    ? offer.data.slices
+    : [];
+  const firstSlice = slices[0] || {};
+  const lastSlice = slices[slices.length - 1] || {};
+  const firstSeg = Array.isArray(firstSlice.segments) ? firstSlice.segments[0] : null;
+
+  const totalAmount = parseAmount(
+    booking.totalAmount,
+    booking.amount,
+    booking.total,
+    offer.totalAmount,
+    offer.total_amount,
+    offer.total,
+    offer?.price?.total,
+    booking?.duffel?.order?.total_amount
+  );
+  const currency = offer.totalCurrency || offer.total_currency || booking.currency || 'EUR';
+  const origin = booking.origin || formatAirport(firstSlice.origin || offer.origin);
+  const destination = booking.destination || formatAirport(lastSlice.destination || offer.destination);
+  const departureDate =
+    booking.departureDate ||
+    (firstSeg && (firstSeg.departureTime || firstSeg.departing_at)) ||
+    booking.createdAt ||
+    booking.created_at ||
+    null;
+
+  let changed = false;
+  if (booking.totalAmount !== totalAmount) { booking.totalAmount = totalAmount; changed = true; }
+  if (!booking.currency && currency) { booking.currency = currency; changed = true; }
+  if (!booking.origin && origin) { booking.origin = origin; changed = true; }
+  if (!booking.destination && destination) { booking.destination = destination; changed = true; }
+  if (!booking.departureDate && departureDate) { booking.departureDate = departureDate; changed = true; }
+  if (changed) booking.updatedAt = new Date().toISOString();
+  return { booking, changed };
+}
+
 // List bookings
 app.get("/bookings", (req, res) => {
   try {
     const items = readBookingsFile();
-    // optional: filter by user/email in future
-    res.json(items);
+    let anyChanged = false;
+    const normalized = items.map((r) => {
+      const { booking, changed } = normalizeBooking(r);
+      if (changed) anyChanged = true;
+      return booking;
+    });
+    if (anyChanged) writeBookingsFile(normalized);
+    res.json(normalized);
   } catch (e) {
     res.status(500).json({ error: "Failed to read bookings", details: e?.message });
   }
@@ -721,7 +791,7 @@ app.post("/bookings", (req, res) => {
     const items = readBookingsFile();
     const id = `bk_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
     const nowIso = new Date().toISOString();
-    const record = {
+    const base = {
       id,
       createdAt: nowIso,
       updatedAt: nowIso,
@@ -732,12 +802,35 @@ app.post("/bookings", (req, res) => {
       offer: payload.offer || null,
       passengers: Array.isArray(payload.passengers) ? payload.passengers : [],
       options: payload.options || {},
+      totalAmount: payload.totalAmount,
+      currency: payload.currency,
+      origin: payload.origin,
+      destination: payload.destination,
+      departureDate: payload.departureDate,
     };
+    const { booking: record } = normalizeBooking(base);
     items.unshift(record);
     if (!writeBookingsFile(items)) {
       return res.status(500).json({ ok: false, error: "Persist failed" });
     }
     res.json({ ok: true, id, data: record });
+  } catch (e) {
+    res.status(500).json({ ok: false, error: e?.message });
+  }
+});
+
+// Normalize all existing bookings (manual trigger)
+app.post("/bookings/normalize", (req, res) => {
+  try {
+    const items = readBookingsFile();
+    let anyChanged = false;
+    const normalized = items.map((r) => {
+      const { booking, changed } = normalizeBooking(r);
+      if (changed) anyChanged = true;
+      return booking;
+    });
+    if (anyChanged) writeBookingsFile(normalized);
+    res.json({ ok: true, updated: anyChanged, count: normalized.length });
   } catch (e) {
     res.status(500).json({ ok: false, error: e?.message });
   }
