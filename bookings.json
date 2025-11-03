@@ -1,0 +1,974 @@
+[
+  {
+    "id": "bk_1762165230249_xqljpi",
+    "createdAt": "2025-11-03T10:20:30.249Z",
+    "updatedAt": "2025-11-03T10:20:30.249Z",
+    "status": "paid",
+    "type": "flight",
+    "stripe_session_id": "cs_test_a1c7wecS4TtpUIJYDQalAxJRB6ZQ3poUBvZQFiy5rZMQW4qXGf34ndlYqd",
+    "duffel": null,
+    "offer": {
+      "id": "off_0000AzrhwcgPPBFw2yD2n4",
+      "totalAmount": "358.21",
+      "totalCurrency": "EUR",
+      "slices": [
+        {
+          "origin": {
+            "iata_city_code": "ADA",
+            "icao_code": "LTAF",
+            "airports": null,
+            "city_name": "Adana",
+            "iata_country_code": "TR",
+            "iata_code": "ADA",
+            "latitude": 36.983457,
+            "longitude": 35.286266,
+            "city": null,
+            "time_zone": "Europe/Istanbul",
+            "type": "airport",
+            "name": "Adana Şakirpaşa Airport",
+            "id": "arp_ada_tr"
+          },
+          "destination": {
+            "iata_city_code": "LCG",
+            "icao_code": "LECO",
+            "airports": null,
+            "city_name": "A Coruña",
+            "iata_country_code": "ES",
+            "iata_code": "LCG",
+            "latitude": 43.301777,
+            "longitude": -8.378186,
+            "city": null,
+            "time_zone": "Europe/Madrid",
+            "type": "airport",
+            "name": "A Coruña Airport",
+            "id": "arp_lcg_es"
+          },
+          "segments": [
+            {
+              "id": "seg_0000AzrhwcgPPBFw2yD2n2",
+              "origin": {
+                "iata_city_code": "ADA",
+                "icao_code": "LTAF",
+                "airports": null,
+                "city_name": "Adana",
+                "iata_country_code": "TR",
+                "iata_code": "ADA",
+                "latitude": 36.983457,
+                "longitude": 35.286266,
+                "city": null,
+                "time_zone": "Europe/Istanbul",
+                "type": "airport",
+                "name": "Adana Şakirpaşa Airport",
+                "id": "arp_ada_tr"
+              },
+              "destination": {
+                "iata_city_code": "LCG",
+                "icao_code": "LECO",
+                "airports": null,
+                "city_name": "A Coruña",
+                "iata_country_code": "ES",
+                "iata_code": "LCG",
+                "latitude": 43.301777,
+                "longitude": -8.378186,
+                "city": null,
+                "time_zone": "Europe/Madrid",
+                "type": "airport",
+                "name": "A Coruña Airport",
+                "id": "arp_lcg_es"
+              },
+              "departureTime": "2025-11-04T02:19:00",
+              "arrivalTime": "2025-11-04T05:52:00",
+              "duration": "PT5H33M",
+              "aircraft": null,
+              "airline": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/ZZ.svg",
+                "logo_lockup_url": null,
+                "conditions_of_carriage_url": "https://duffelairways.com/dummy-url/conditions-of-carriage",
+                "iata_code": "ZZ",
+                "name": "Duffel Airways",
+                "id": "arl_00009VME7D6ivUu8dn35WK"
+              },
+              "flightNumber": "9255"
+            }
+          ]
+        }
+      ],
+      "passengers": [
+        {
+          "id": "pas_0000AzrhwcSEFtuhKzZigk",
+          "type": "adult",
+          "givenName": null,
+          "familyName": null,
+          "age": null
+        },
+        {
+          "id": "pas_0000AzrhwcSEFtuhKzZigl",
+          "type": "adult",
+          "givenName": null,
+          "familyName": null,
+          "age": null
+        }
+      ],
+      "owner": {
+        "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/ZZ.svg",
+        "logo_lockup_url": null,
+        "conditions_of_carriage_url": "https://duffelairways.com/dummy-url/conditions-of-carriage",
+        "iata_code": "ZZ",
+        "name": "Duffel Airways",
+        "id": "arl_00009VME7D6ivUu8dn35WK"
+      },
+      "expiresAt": "2025-11-03T10:43:03.626205Z",
+      "createdAt": "2025-11-03T10:13:03.626204Z"
+    },
+    "passengers": [
+      {
+        "title": "Mr",
+        "firstName": "Syed Agha Shah",
+        "lastName": "Haider",
+        "dob": "21/09/2002",
+        "nationality": "Pakistan"
+      },
+      {
+        "title": "Ms",
+        "firstName": "Alize ",
+        "lastName": "Fatima",
+        "dob": "02/07/2002",
+        "nationality": "Pakistan"
+      }
+    ],
+    "options": {
+      "bags": 1,
+      "seatPreference": "window"
+    },
+    "totalAmount": 358.21,
+    "currency": "EUR",
+    "origin": "ADA",
+    "destination": "LCG",
+    "departureDate": "2025-11-04T02:19:00",
+    "passengerCount": 2
+  },
+  {
+    "id": "bk_1762165223744_x8h4ea",
+    "createdAt": "2025-11-03T10:20:23.745Z",
+    "updatedAt": "2025-11-03T10:20:23.746Z",
+    "status": "paid",
+    "type": "flight",
+    "stripe_session_id": "cs_test_a1c7wecS4TtpUIJYDQalAxJRB6ZQ3poUBvZQFiy5rZMQW4qXGf34ndlYqd",
+    "duffel": null,
+    "offer": {
+      "id": "off_0000AzrhwcgPPBFw2yD2n4",
+      "totalAmount": "358.21",
+      "totalCurrency": "EUR",
+      "slices": [
+        {
+          "origin": {
+            "iata_city_code": "ADA",
+            "icao_code": "LTAF",
+            "airports": null,
+            "city_name": "Adana",
+            "iata_country_code": "TR",
+            "iata_code": "ADA",
+            "latitude": 36.983457,
+            "longitude": 35.286266,
+            "city": null,
+            "time_zone": "Europe/Istanbul",
+            "type": "airport",
+            "name": "Adana Şakirpaşa Airport",
+            "id": "arp_ada_tr"
+          },
+          "destination": {
+            "iata_city_code": "LCG",
+            "icao_code": "LECO",
+            "airports": null,
+            "city_name": "A Coruña",
+            "iata_country_code": "ES",
+            "iata_code": "LCG",
+            "latitude": 43.301777,
+            "longitude": -8.378186,
+            "city": null,
+            "time_zone": "Europe/Madrid",
+            "type": "airport",
+            "name": "A Coruña Airport",
+            "id": "arp_lcg_es"
+          },
+          "segments": [
+            {
+              "id": "seg_0000AzrhwcgPPBFw2yD2n2",
+              "origin": {
+                "iata_city_code": "ADA",
+                "icao_code": "LTAF",
+                "airports": null,
+                "city_name": "Adana",
+                "iata_country_code": "TR",
+                "iata_code": "ADA",
+                "latitude": 36.983457,
+                "longitude": 35.286266,
+                "city": null,
+                "time_zone": "Europe/Istanbul",
+                "type": "airport",
+                "name": "Adana Şakirpaşa Airport",
+                "id": "arp_ada_tr"
+              },
+              "destination": {
+                "iata_city_code": "LCG",
+                "icao_code": "LECO",
+                "airports": null,
+                "city_name": "A Coruña",
+                "iata_country_code": "ES",
+                "iata_code": "LCG",
+                "latitude": 43.301777,
+                "longitude": -8.378186,
+                "city": null,
+                "time_zone": "Europe/Madrid",
+                "type": "airport",
+                "name": "A Coruña Airport",
+                "id": "arp_lcg_es"
+              },
+              "departureTime": "2025-11-04T02:19:00",
+              "arrivalTime": "2025-11-04T05:52:00",
+              "duration": "PT5H33M",
+              "aircraft": null,
+              "airline": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/ZZ.svg",
+                "logo_lockup_url": null,
+                "conditions_of_carriage_url": "https://duffelairways.com/dummy-url/conditions-of-carriage",
+                "iata_code": "ZZ",
+                "name": "Duffel Airways",
+                "id": "arl_00009VME7D6ivUu8dn35WK"
+              },
+              "flightNumber": "9255"
+            }
+          ]
+        }
+      ],
+      "passengers": [
+        {
+          "id": "pas_0000AzrhwcSEFtuhKzZigk",
+          "type": "adult",
+          "givenName": null,
+          "familyName": null,
+          "age": null
+        },
+        {
+          "id": "pas_0000AzrhwcSEFtuhKzZigl",
+          "type": "adult",
+          "givenName": null,
+          "familyName": null,
+          "age": null
+        }
+      ],
+      "owner": {
+        "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/ZZ.svg",
+        "logo_lockup_url": null,
+        "conditions_of_carriage_url": "https://duffelairways.com/dummy-url/conditions-of-carriage",
+        "iata_code": "ZZ",
+        "name": "Duffel Airways",
+        "id": "arl_00009VME7D6ivUu8dn35WK"
+      },
+      "expiresAt": "2025-11-03T10:43:03.626205Z",
+      "createdAt": "2025-11-03T10:13:03.626204Z"
+    },
+    "passengers": [
+      {
+        "title": "Mr",
+        "firstName": "Syed Agha Shah",
+        "lastName": "Haider",
+        "dob": "21/09/2002",
+        "nationality": "Pakistan"
+      },
+      {
+        "title": "Ms",
+        "firstName": "Alize ",
+        "lastName": "Fatima",
+        "dob": "02/07/2002",
+        "nationality": "Pakistan"
+      }
+    ],
+    "options": {
+      "bags": 1,
+      "seatPreference": "window"
+    },
+    "totalAmount": 358.21,
+    "currency": "EUR",
+    "origin": "ADA",
+    "destination": "LCG",
+    "departureDate": "2025-11-04T02:19:00",
+    "passengerCount": 2
+  },
+  {
+    "id": "bk_1762155483667_lyk55y",
+    "createdAt": "2025-11-03T07:38:03.667Z",
+    "updatedAt": "2025-11-03T07:38:03.667Z",
+    "status": "paid",
+    "type": "flight",
+    "stripe_session_id": "cs_test_a1nGiByDOrL4OrfbFdygdRmp5oKWg8KRKqCBNr8yHsLPvGt9jGkb9tXnkS",
+    "duffel": null,
+    "offer": {
+      "id": "off_0000AzrTz2wkVAuDlhdSmR",
+      "totalAmount": "315.96",
+      "totalCurrency": "EUR",
+      "slices": [
+        {
+          "origin": {
+            "airports": null,
+            "iata_country_code": "TR",
+            "iata_city_code": "ADA",
+            "city_name": "Adana",
+            "icao_code": "LTAF",
+            "iata_code": "ADA",
+            "latitude": 36.983457,
+            "longitude": 35.286266,
+            "city": null,
+            "time_zone": "Europe/Istanbul",
+            "type": "airport",
+            "name": "Adana Şakirpaşa Airport",
+            "id": "arp_ada_tr"
+          },
+          "destination": {
+            "airports": null,
+            "iata_country_code": "ET",
+            "iata_city_code": "DIR",
+            "city_name": "Dire Dawa",
+            "icao_code": "HADR",
+            "iata_code": "DIR",
+            "latitude": 9.624085,
+            "longitude": 41.854186,
+            "city": null,
+            "time_zone": "Africa/Addis_Ababa",
+            "type": "airport",
+            "name": "Aba Tenna Dejazmach Yilma International Airport",
+            "id": "arp_dir_et"
+          },
+          "segments": [
+            {
+              "id": "seg_0000AzrTz2wkVAuDlhdSmO",
+              "origin": {
+                "airports": null,
+                "iata_country_code": "TR",
+                "iata_city_code": "ADA",
+                "city_name": "Adana",
+                "icao_code": "LTAF",
+                "iata_code": "ADA",
+                "latitude": 36.983457,
+                "longitude": 35.286266,
+                "city": null,
+                "time_zone": "Europe/Istanbul",
+                "type": "airport",
+                "name": "Adana Şakirpaşa Airport",
+                "id": "arp_ada_tr"
+              },
+              "destination": {
+                "airports": null,
+                "iata_country_code": "ET",
+                "iata_city_code": "DIR",
+                "city_name": "Dire Dawa",
+                "icao_code": "HADR",
+                "iata_code": "DIR",
+                "latitude": 9.624085,
+                "longitude": 41.854186,
+                "city": null,
+                "time_zone": "Africa/Addis_Ababa",
+                "type": "airport",
+                "name": "Aba Tenna Dejazmach Yilma International Airport",
+                "id": "arp_dir_et"
+              },
+              "departureTime": "2025-11-04T02:19:00",
+              "arrivalTime": "2025-11-04T07:03:00",
+              "duration": "PT4H44M",
+              "aircraft": null,
+              "airline": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/ZZ.svg",
+                "logo_lockup_url": null,
+                "conditions_of_carriage_url": "https://duffelairways.com/dummy-url/conditions-of-carriage",
+                "iata_code": "ZZ",
+                "name": "Duffel Airways",
+                "id": "arl_00009VME7D6ivUu8dn35WK"
+              },
+              "flightNumber": "1452"
+            }
+          ]
+        }
+      ],
+      "passengers": [
+        {
+          "id": "pas_0000AzrTz2iDNDHP2cpr7z",
+          "type": "adult",
+          "givenName": null,
+          "familyName": null,
+          "age": null
+        },
+        {
+          "id": "pas_0000AzrTz2iDNDHP2cpr81",
+          "type": "adult",
+          "givenName": null,
+          "familyName": null,
+          "age": null
+        }
+      ],
+      "owner": {
+        "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/ZZ.svg",
+        "logo_lockup_url": null,
+        "conditions_of_carriage_url": "https://duffelairways.com/dummy-url/conditions-of-carriage",
+        "iata_code": "ZZ",
+        "name": "Duffel Airways",
+        "id": "arl_00009VME7D6ivUu8dn35WK"
+      },
+      "expiresAt": "2025-11-03T08:06:37.688922Z",
+      "createdAt": "2025-11-03T07:36:37.688918Z"
+    },
+    "passengers": [],
+    "options": {
+      "bags": 1,
+      "seatPreference": "window"
+    },
+    "totalAmount": 315.96,
+    "currency": "EUR",
+    "origin": "ADA",
+    "destination": "DIR",
+    "departureDate": "2025-11-04T02:19:00"
+  },
+  {
+    "id": "bk_1762155155726_vt66tg",
+    "createdAt": "2025-11-03T07:32:35.726Z",
+    "updatedAt": "2025-11-03T07:32:35.726Z",
+    "status": "paid",
+    "type": "flight",
+    "stripe_session_id": "cs_test_a1IaYNvsUKgYhDba50l55TX06HTgkoK1ExbQWjJHW834ccWiz4g4buRgbh",
+    "duffel": null,
+    "offer": {
+      "id": "off_0000AzrSs3WHs9Q7Z5MREo",
+      "totalAmount": "877.48",
+      "totalCurrency": "EUR",
+      "slices": [
+        {
+          "origin": {
+            "airports": null,
+            "iata_country_code": "TR",
+            "iata_city_code": "ADA",
+            "city_name": "Adana",
+            "icao_code": "LTAF",
+            "iata_code": "ADA",
+            "latitude": 36.983457,
+            "longitude": 35.286266,
+            "city": null,
+            "time_zone": "Europe/Istanbul",
+            "type": "airport",
+            "name": "Adana Şakirpaşa Airport",
+            "id": "arp_ada_tr"
+          },
+          "destination": {
+            "airports": null,
+            "iata_country_code": "US",
+            "iata_city_code": "ADT",
+            "city_name": "Ada",
+            "icao_code": "KADH",
+            "iata_code": "ADT",
+            "latitude": 34.803321,
+            "longitude": -96.670995,
+            "city": null,
+            "time_zone": "America/Chicago",
+            "type": "airport",
+            "name": "Ada Municipal Airport",
+            "id": "arp_adt_us"
+          },
+          "segments": [
+            {
+              "id": "seg_0000AzrSs3WHs9Q7Z5MREm",
+              "origin": {
+                "airports": null,
+                "iata_country_code": "TR",
+                "iata_city_code": "ADA",
+                "city_name": "Adana",
+                "icao_code": "LTAF",
+                "iata_code": "ADA",
+                "latitude": 36.983457,
+                "longitude": 35.286266,
+                "city": null,
+                "time_zone": "Europe/Istanbul",
+                "type": "airport",
+                "name": "Adana Şakirpaşa Airport",
+                "id": "arp_ada_tr"
+              },
+              "destination": {
+                "airports": null,
+                "iata_country_code": "US",
+                "iata_city_code": "ADT",
+                "city_name": "Ada",
+                "icao_code": "KADH",
+                "iata_code": "ADT",
+                "latitude": 34.803321,
+                "longitude": -96.670995,
+                "city": null,
+                "time_zone": "America/Chicago",
+                "type": "airport",
+                "name": "Ada Municipal Airport",
+                "id": "arp_adt_us"
+              },
+              "departureTime": "2025-11-04T02:19:00",
+              "arrivalTime": "2025-11-04T08:03:00",
+              "duration": "PT14H44M",
+              "aircraft": null,
+              "airline": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/ZZ.svg",
+                "logo_lockup_url": null,
+                "conditions_of_carriage_url": "https://duffelairways.com/dummy-url/conditions-of-carriage",
+                "iata_code": "ZZ",
+                "name": "Duffel Airways",
+                "id": "arl_00009VME7D6ivUu8dn35WK"
+              },
+              "flightNumber": "1452"
+            }
+          ]
+        }
+      ],
+      "passengers": [
+        {
+          "id": "pas_0000AzrSs3H2mpE8noEGTi",
+          "type": "adult",
+          "givenName": null,
+          "familyName": null,
+          "age": null
+        },
+        {
+          "id": "pas_0000AzrSs3H2mpE8noEGTj",
+          "type": "adult",
+          "givenName": null,
+          "familyName": null,
+          "age": null
+        }
+      ],
+      "owner": {
+        "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/ZZ.svg",
+        "logo_lockup_url": null,
+        "conditions_of_carriage_url": "https://duffelairways.com/dummy-url/conditions-of-carriage",
+        "iata_code": "ZZ",
+        "name": "Duffel Airways",
+        "id": "arl_00009VME7D6ivUu8dn35WK"
+      },
+      "expiresAt": "2025-11-03T07:54:09.582768Z",
+      "createdAt": "2025-11-03T07:24:09.582767Z"
+    },
+    "passengers": [
+      {
+        "title": "Mr",
+        "firstName": "Syed Agha Shah Haider",
+        "lastName": "",
+        "dob": "",
+        "nationality": ""
+      },
+      {
+        "title": "Ms",
+        "firstName": "",
+        "lastName": "",
+        "dob": "",
+        "nationality": ""
+      }
+    ],
+    "options": {
+      "bags": 0,
+      "seatPreference": "any"
+    },
+    "totalAmount": 877.48,
+    "currency": "EUR",
+    "origin": "ADA",
+    "destination": "ADT",
+    "departureDate": "2025-11-04T02:19:00",
+    "passengerCount": 2
+  },
+  {
+    "id": "bk_1762154943767_pkg5yv",
+    "createdAt": "2025-11-03T07:29:03.767Z",
+    "updatedAt": "2025-11-03T07:29:03.767Z",
+    "status": "paid",
+    "type": "flight",
+    "stripe_session_id": "cs_test_a1jE1lnaEqmBuPttRFbd2C5iRJoxOguAScAdXY7D6ISvt8YV76mJ80FBjl",
+    "duffel": null,
+    "offer": {
+      "id": "off_0000AzrSs3WHs9Q7Z5MREo",
+      "totalAmount": "877.48",
+      "totalCurrency": "EUR",
+      "slices": [
+        {
+          "origin": {
+            "airports": null,
+            "iata_country_code": "TR",
+            "iata_city_code": "ADA",
+            "city_name": "Adana",
+            "icao_code": "LTAF",
+            "iata_code": "ADA",
+            "latitude": 36.983457,
+            "longitude": 35.286266,
+            "city": null,
+            "time_zone": "Europe/Istanbul",
+            "type": "airport",
+            "name": "Adana Şakirpaşa Airport",
+            "id": "arp_ada_tr"
+          },
+          "destination": {
+            "airports": null,
+            "iata_country_code": "US",
+            "iata_city_code": "ADT",
+            "city_name": "Ada",
+            "icao_code": "KADH",
+            "iata_code": "ADT",
+            "latitude": 34.803321,
+            "longitude": -96.670995,
+            "city": null,
+            "time_zone": "America/Chicago",
+            "type": "airport",
+            "name": "Ada Municipal Airport",
+            "id": "arp_adt_us"
+          },
+          "segments": [
+            {
+              "id": "seg_0000AzrSs3WHs9Q7Z5MREm",
+              "origin": {
+                "airports": null,
+                "iata_country_code": "TR",
+                "iata_city_code": "ADA",
+                "city_name": "Adana",
+                "icao_code": "LTAF",
+                "iata_code": "ADA",
+                "latitude": 36.983457,
+                "longitude": 35.286266,
+                "city": null,
+                "time_zone": "Europe/Istanbul",
+                "type": "airport",
+                "name": "Adana Şakirpaşa Airport",
+                "id": "arp_ada_tr"
+              },
+              "destination": {
+                "airports": null,
+                "iata_country_code": "US",
+                "iata_city_code": "ADT",
+                "city_name": "Ada",
+                "icao_code": "KADH",
+                "iata_code": "ADT",
+                "latitude": 34.803321,
+                "longitude": -96.670995,
+                "city": null,
+                "time_zone": "America/Chicago",
+                "type": "airport",
+                "name": "Ada Municipal Airport",
+                "id": "arp_adt_us"
+              },
+              "departureTime": "2025-11-04T02:19:00",
+              "arrivalTime": "2025-11-04T08:03:00",
+              "duration": "PT14H44M",
+              "aircraft": null,
+              "airline": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/ZZ.svg",
+                "logo_lockup_url": null,
+                "conditions_of_carriage_url": "https://duffelairways.com/dummy-url/conditions-of-carriage",
+                "iata_code": "ZZ",
+                "name": "Duffel Airways",
+                "id": "arl_00009VME7D6ivUu8dn35WK"
+              },
+              "flightNumber": "1452"
+            }
+          ]
+        }
+      ],
+      "passengers": [
+        {
+          "id": "pas_0000AzrSs3H2mpE8noEGTi",
+          "type": "adult",
+          "givenName": null,
+          "familyName": null,
+          "age": null
+        },
+        {
+          "id": "pas_0000AzrSs3H2mpE8noEGTj",
+          "type": "adult",
+          "givenName": null,
+          "familyName": null,
+          "age": null
+        }
+      ],
+      "owner": {
+        "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/ZZ.svg",
+        "logo_lockup_url": null,
+        "conditions_of_carriage_url": "https://duffelairways.com/dummy-url/conditions-of-carriage",
+        "iata_code": "ZZ",
+        "name": "Duffel Airways",
+        "id": "arl_00009VME7D6ivUu8dn35WK"
+      },
+      "expiresAt": "2025-11-03T07:54:09.582768Z",
+      "createdAt": "2025-11-03T07:24:09.582767Z"
+    },
+    "passengers": [],
+    "options": {
+      "bags": 1,
+      "seatPreference": "window"
+    },
+    "totalAmount": 877.48,
+    "currency": "EUR",
+    "origin": "ADA",
+    "destination": "ADT",
+    "departureDate": "2025-11-04T02:19:00"
+  },
+  {
+    "id": "bk_1762154725454_r8efw4",
+    "createdAt": "2025-11-03T07:25:25.454Z",
+    "updatedAt": "2025-11-03T07:25:25.454Z",
+    "status": "paid",
+    "type": "flight",
+    "stripe_session_id": "cs_test_a1xiTdf93j76i8QbPk4r7fZJXBut6virye2BIeTv1a635o7Dxui7GbECgW",
+    "duffel": null,
+    "offer": {
+      "id": "off_0000AzrSs3WHs9Q7Z5MREo",
+      "totalAmount": "877.48",
+      "totalCurrency": "EUR",
+      "slices": [
+        {
+          "origin": {
+            "airports": null,
+            "iata_country_code": "TR",
+            "iata_city_code": "ADA",
+            "city_name": "Adana",
+            "icao_code": "LTAF",
+            "iata_code": "ADA",
+            "latitude": 36.983457,
+            "longitude": 35.286266,
+            "city": null,
+            "time_zone": "Europe/Istanbul",
+            "type": "airport",
+            "name": "Adana Şakirpaşa Airport",
+            "id": "arp_ada_tr"
+          },
+          "destination": {
+            "airports": null,
+            "iata_country_code": "US",
+            "iata_city_code": "ADT",
+            "city_name": "Ada",
+            "icao_code": "KADH",
+            "iata_code": "ADT",
+            "latitude": 34.803321,
+            "longitude": -96.670995,
+            "city": null,
+            "time_zone": "America/Chicago",
+            "type": "airport",
+            "name": "Ada Municipal Airport",
+            "id": "arp_adt_us"
+          },
+          "segments": [
+            {
+              "id": "seg_0000AzrSs3WHs9Q7Z5MREm",
+              "origin": {
+                "airports": null,
+                "iata_country_code": "TR",
+                "iata_city_code": "ADA",
+                "city_name": "Adana",
+                "icao_code": "LTAF",
+                "iata_code": "ADA",
+                "latitude": 36.983457,
+                "longitude": 35.286266,
+                "city": null,
+                "time_zone": "Europe/Istanbul",
+                "type": "airport",
+                "name": "Adana Şakirpaşa Airport",
+                "id": "arp_ada_tr"
+              },
+              "destination": {
+                "airports": null,
+                "iata_country_code": "US",
+                "iata_city_code": "ADT",
+                "city_name": "Ada",
+                "icao_code": "KADH",
+                "iata_code": "ADT",
+                "latitude": 34.803321,
+                "longitude": -96.670995,
+                "city": null,
+                "time_zone": "America/Chicago",
+                "type": "airport",
+                "name": "Ada Municipal Airport",
+                "id": "arp_adt_us"
+              },
+              "departureTime": "2025-11-04T02:19:00",
+              "arrivalTime": "2025-11-04T08:03:00",
+              "duration": "PT14H44M",
+              "aircraft": null,
+              "airline": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/ZZ.svg",
+                "logo_lockup_url": null,
+                "conditions_of_carriage_url": "https://duffelairways.com/dummy-url/conditions-of-carriage",
+                "iata_code": "ZZ",
+                "name": "Duffel Airways",
+                "id": "arl_00009VME7D6ivUu8dn35WK"
+              },
+              "flightNumber": "1452"
+            }
+          ]
+        }
+      ],
+      "passengers": [
+        {
+          "id": "pas_0000AzrSs3H2mpE8noEGTi",
+          "type": "adult",
+          "givenName": null,
+          "familyName": null,
+          "age": null
+        },
+        {
+          "id": "pas_0000AzrSs3H2mpE8noEGTj",
+          "type": "adult",
+          "givenName": null,
+          "familyName": null,
+          "age": null
+        }
+      ],
+      "owner": {
+        "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/ZZ.svg",
+        "logo_lockup_url": null,
+        "conditions_of_carriage_url": "https://duffelairways.com/dummy-url/conditions-of-carriage",
+        "iata_code": "ZZ",
+        "name": "Duffel Airways",
+        "id": "arl_00009VME7D6ivUu8dn35WK"
+      },
+      "expiresAt": "2025-11-03T07:54:09.582768Z",
+      "createdAt": "2025-11-03T07:24:09.582767Z"
+    },
+    "passengers": [],
+    "options": {
+      "bags": 1,
+      "seatPreference": "window"
+    },
+    "totalAmount": 877.48,
+    "currency": "EUR",
+    "origin": "ADA",
+    "destination": "ADT",
+    "departureDate": "2025-11-04T02:19:00"
+  },
+  {
+    "id": "bk_1762154504477_75oynu",
+    "createdAt": "2025-11-03T07:21:44.477Z",
+    "updatedAt": "2025-11-03T07:21:44.477Z",
+    "status": "paid",
+    "type": "flight",
+    "stripe_session_id": "cs_test_a1IaYNvsUKgYhDba50l55TX06HTgkoK1ExbQWjJHW834ccWiz4g4buRgbh",
+    "duffel": null,
+    "offer": {
+      "id": "off_0000AzrSVSQcJbFQWrHtQI",
+      "totalAmount": "915.69",
+      "totalCurrency": "EUR",
+      "slices": [
+        {
+          "origin": {
+            "airports": null,
+            "iata_country_code": "TR",
+            "iata_city_code": "ADA",
+            "city_name": "Adana",
+            "icao_code": "LTAF",
+            "iata_code": "ADA",
+            "latitude": 36.983457,
+            "longitude": 35.286266,
+            "city": null,
+            "time_zone": "Europe/Istanbul",
+            "type": "airport",
+            "name": "Adana Şakirpaşa Airport",
+            "id": "arp_ada_tr"
+          },
+          "destination": {
+            "airports": null,
+            "iata_country_code": "US",
+            "iata_city_code": "ADT",
+            "city_name": "Ada",
+            "icao_code": "KADH",
+            "iata_code": "ADT",
+            "latitude": 34.803321,
+            "longitude": -96.670995,
+            "city": null,
+            "time_zone": "America/Chicago",
+            "type": "airport",
+            "name": "Ada Municipal Airport",
+            "id": "arp_adt_us"
+          },
+          "segments": [
+            {
+              "id": "seg_0000AzrSVSQcJbFQWrHtQG",
+              "origin": {
+                "airports": null,
+                "iata_country_code": "TR",
+                "iata_city_code": "ADA",
+                "city_name": "Adana",
+                "icao_code": "LTAF",
+                "iata_code": "ADA",
+                "latitude": 36.983457,
+                "longitude": 35.286266,
+                "city": null,
+                "time_zone": "Europe/Istanbul",
+                "type": "airport",
+                "name": "Adana Şakirpaşa Airport",
+                "id": "arp_ada_tr"
+              },
+              "destination": {
+                "airports": null,
+                "iata_country_code": "US",
+                "iata_city_code": "ADT",
+                "city_name": "Ada",
+                "icao_code": "KADH",
+                "iata_code": "ADT",
+                "latitude": 34.803321,
+                "longitude": -96.670995,
+                "city": null,
+                "time_zone": "America/Chicago",
+                "type": "airport",
+                "name": "Ada Municipal Airport",
+                "id": "arp_adt_us"
+              },
+              "departureTime": "2025-11-04T02:19:00",
+              "arrivalTime": "2025-11-04T08:03:00",
+              "duration": "PT14H44M",
+              "aircraft": null,
+              "airline": {
+                "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/ZZ.svg",
+                "logo_lockup_url": null,
+                "conditions_of_carriage_url": "https://duffelairways.com/dummy-url/conditions-of-carriage",
+                "iata_code": "ZZ",
+                "name": "Duffel Airways",
+                "id": "arl_00009VME7D6ivUu8dn35WK"
+              },
+              "flightNumber": "1452"
+            }
+          ]
+        }
+      ],
+      "passengers": [
+        {
+          "id": "pas_0000AzrSVSDr532VtHJhWz",
+          "type": "adult",
+          "givenName": null,
+          "familyName": null,
+          "age": null
+        },
+        {
+          "id": "pas_0000AzrSVSDr532VtHJhX0",
+          "type": "adult",
+          "givenName": null,
+          "familyName": null,
+          "age": null
+        }
+      ],
+      "owner": {
+        "logo_symbol_url": "https://assets.duffel.com/img/airlines/for-light-background/full-color-logo/ZZ.svg",
+        "logo_lockup_url": null,
+        "conditions_of_carriage_url": "https://duffelairways.com/dummy-url/conditions-of-carriage",
+        "iata_code": "ZZ",
+        "name": "Duffel Airways",
+        "id": "arl_00009VME7D6ivUu8dn35WK"
+      },
+      "expiresAt": "2025-11-03T07:50:04.537710Z",
+      "createdAt": "2025-11-03T07:20:04.537708Z"
+    },
+    "passengers": [],
+    "options": {
+      "bags": 1,
+      "seatPreference": "window"
+    },
+    "totalAmount": 915.69,
+    "currency": "EUR",
+    "origin": "ADA",
+    "destination": "ADT",
+    "departureDate": "2025-11-04T02:19:00"
+  }
+]

@@ -10,7 +10,7 @@ if [ ! -f .env ]; then
     if [ -f env.example ]; then
         cp env.example .env
         echo "✅ Created .env from env.example"
-        echo "⚠️  Please update .env with your actual credentials before running again"
+    echo "⚠️  Please update .env with your actual credentials before running again"
     else
         echo "❌ env.example not found. Please create .env manually with your credentials."
     fi
